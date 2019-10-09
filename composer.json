@@ -1,7 +1,7 @@
 {
     "name": "extalion/php-enum",
     "description": "Gives the ability to emulate and create enumeration objects in PHP.",
-    "keywords": ["enum"],
+    "keywords": ["php", "enum", "type"],
     "type": "library",
     "require-dev": {
     },
