@@ -1,0 +1,23 @@
+{
+    "name": "extalion/php-enum",
+    "description": "Gives the ability to emulate and create enumeration objects in PHP.",
+    "keywords": ["enum"],
+    "type": "library",
+    "require-dev": {
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Damian Glinkowski",
+            "email": "damian@d0niek.pl"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "files": [
+            "Enum.php"
+        ]
+    }
+}
