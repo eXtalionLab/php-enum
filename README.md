@@ -9,25 +9,25 @@ composer install extalion/php-enum
 
 ## How to use
 
+Enum definition
+
 ```php
 /**
  * @method static RequestMethod get()
  * @method static RequestMethod post()
- * @method static RequestMethod delete()
- * @method static RequestMethod put()
- * @method static RequestMethod patch()
  */
 class RequestMethod extends \Enum
 {
     const VALUES = [
         'get' => 1,
-        'post' => 2,
-        'delete' => 3,
-        'put' => 4,
-        'patch' => 4
+        'post' => 2
     ];
 }
+```
 
+Usage
+
+```php
 function request(string $url, RequestMethod $method, array $data = [])
 {
     // ...
