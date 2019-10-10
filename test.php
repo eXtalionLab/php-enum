@@ -29,6 +29,6 @@ $enum = Foo::bar();
 \assert(Foo::boo() === Foo::key(), 'Enums with same value are not same');
 
 \assert(
-    \json_encode(Foo::bar()) === '{"enum":{"name":"Foo","value":1}}',
+    \json_encode(Foo::bar()) === '{"name":"bar","value":1}',
     'Enum json is not valid'
 );

@@ -14,6 +14,13 @@ abstract class Enum implements \JsonSerializable
     const VALUES = [];
 
     /**
+     * Actual enum name
+     *
+     * @var string
+     */
+    private $_name;
+
+    /**
      * Actual enum value
      *
      * @var mixed
@@ -30,11 +37,11 @@ abstract class Enum implements \JsonSerializable
     /**
      * Constructor \Enum
      *
-     * @param mixed $name Enum's name
+     * @param string $name Enum's name
      *
      * @throws \RuntimeException
      */
-    private function __construct($name)
+    private function __construct(string $name)
     {
         $isAllowValue = static::VALUES[$name] ?? null;
 
@@ -44,6 +51,7 @@ abstract class Enum implements \JsonSerializable
             );
         }
 
+        $this->_name = $name;
         $this->_value = static::VALUES[$name];
     }
 
@@ -109,15 +117,13 @@ abstract class Enum implements \JsonSerializable
     /**
      * Specify data which should be serialized to JSON
      *
-     * @return array<string, array<string, mixed>>
+     * @return array<string, mixed>
      */
     public function jsonSerialize(): array
     {
         return [
-            'enum' => [
-                'name' => \get_class($this),
-                'value' => $this->_value
-            ]
+            'name' => $this->_name,
+            'value' => $this->_value
         ];
     }
 }
