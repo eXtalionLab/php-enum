@@ -1,4 +1,5 @@
 # php-enum
+
 Gives the ability to emulate and create enumeration objects in PHP.
 
 ## Install
@@ -9,14 +10,14 @@ composer install extalion/php-enum
 
 ## How to use
 
-Enum definition
+Enum definition:
 
 ```php
 /**
  * @method static RequestMethod get()
  * @method static RequestMethod post()
  */
-class RequestMethod extends \Enum
+final class RequestMethod extends \Enum
 {
     const VALUES = [
         'get' => 1,
@@ -25,7 +26,7 @@ class RequestMethod extends \Enum
 }
 ```
 
-Usage
+Usage:
 
 ```php
 function request(string $url, RequestMethod $method, array $data = [])
