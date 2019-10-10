@@ -114,6 +114,17 @@ abstract class Enum implements \JsonSerializable
         return $this->_value;
     }
 
+
+    /**
+     * Allow extract value from enum in string
+     *
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return (string) $this->_value;
+    }
+
     /**
      * Specify data which should be serialized to JSON
      *

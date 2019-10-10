@@ -32,3 +32,5 @@ $enum = Foo::bar();
     \json_encode(Foo::bar()) === '{"name":"bar","value":1}',
     'Enum json is not valid'
 );
+
+\assert((string) Foo::bar() === '1', 'Can\'t cast enum to string');
