@@ -34,3 +34,12 @@ $enum = Foo::bar();
 );
 
 \assert((string) Foo::bar() === '1', 'Can\'t cast enum to string');
+
+final class Bar extends \Enum
+{
+    const VALUES = [
+        'bar' => 1
+    ];
+}
+
+\assert(Foo::bar() !== Bar::bar(), 'Two different enums are the same');

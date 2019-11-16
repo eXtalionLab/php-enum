@@ -66,23 +66,30 @@ abstract class Enum implements \JsonSerializable
      */
     public static function __callStatic(string $name, array $args): self
     {
-        $isEnumCreated = \array_key_exists($name, self::$_values);
+        $key = self::generateKey($name);
+        $isEnumCreated = \array_key_exists($key, self::$_values);
 
         if (!$isEnumCreated) {
-            self::$_values[$name] = new static($name);
-            self::creataEnumsWithSameValue(self::$_values[$name]);
+            self::$_values[$key] = new static($name);
+            self::creataEnumsWithSameValue(self::$_values[$key]);
         }
 
-        return self::$_values[$name];
+        return self::$_values[$key];
     }
 
     private static function creataEnumsWithSameValue(\Enum $enum): void
     {
         foreach (static::VALUES as $name => $value) {
             if ($value === $enum()) {
-                self::$_values[$name] = $enum;
+                $key = self::generateKey($name);
+                self::$_values[$key] = $enum;
             }
         }
+    }
+
+    private function generateKey(string $name): string
+    {
+        return \get_called_class() . $name;
     }
 
     /**
