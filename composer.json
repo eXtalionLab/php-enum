@@ -3,8 +3,6 @@
     "description": "Gives the ability to emulate and create enumeration objects in PHP.",
     "keywords": ["php", "enum", "type"],
     "type": "library",
-    "require-dev": {
-    },
     "license": "MIT",
     "authors": [
         {
@@ -12,12 +10,17 @@
             "email": "damian@d0niek.pl"
         }
     ],
-    "require": {
-        "php": "^7.2"
-    },
     "autoload": {
         "files": [
             "Enum.php"
         ]
+    },
+    "require": {
+        "php": "^7.2"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.0-dev"
+        }
     }
 }
