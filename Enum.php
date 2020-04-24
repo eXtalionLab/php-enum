@@ -61,7 +61,7 @@ abstract class Enum implements \JsonSerializable
      * @param string $name Specific enum name
      * @param array $args
      *
-     * @return \Enum
+     * @return self
      * @throws \RuntimeException
      */
     public static function __callStatic(string $name, array $args): self
@@ -97,7 +97,7 @@ abstract class Enum implements \JsonSerializable
      *
      * @param mixed $value Enum's value
      *
-     * @return \Enum
+     * @return self
      * @throws \RuntimeException
      */
     public static function fromValue($value): self
