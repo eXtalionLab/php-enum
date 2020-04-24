@@ -87,7 +87,7 @@ abstract class Enum implements \JsonSerializable
         }
     }
 
-    private function generateKey(string $name): string
+    private static function generateKey(string $name): string
     {
         return \get_called_class() . $name;
     }
